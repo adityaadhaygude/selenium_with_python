@@ -12,3 +12,7 @@ def setup():
 def dataload():
     print("Data generation...")
     return ["Testing", "using", "fixtures"]
+
+@pytest.fixture(params=[("chrome", "v-1.0"), ("IE", "v-5.5"), "firefox"])
+def crossBrowser(request):
+    return request.param
